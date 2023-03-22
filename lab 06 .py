@@ -18,6 +18,14 @@ def encode(password_input):
     return password_encoded
 
 
+# Jett Nguyen
+def decode(encoded):
+    password_decoded = ''
+    for char in encoded:
+        password_decoded += (str(int(char) - 3))  # subtracts 3 to each number in the password
+    return password_decoded
+
+
 def main():
 
     menu_title = "Menu\n-------------"
@@ -43,12 +51,12 @@ def main():
             password_input = input("Please enter your password to encode: ")
 
             password_encoded = encode(password_input)
-            print("Your password has been encoded and stored!")
+            print("Your password has been encoded and stored!\n")
 
         elif decision == 2:
 
             password_decoded = decode(password_encoded)
-            print(f"The encoded password is {password_encoded}, and the original password is {password_decoded}")
+            print(f"The encoded password is {password_encoded}, and the original password is {password_decoded}.\n")
 
         elif decision == 3:
             break

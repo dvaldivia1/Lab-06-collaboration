@@ -1,6 +1,6 @@
 # lab 06 by Diego Valdivia
 
-def encoder(password_input):
+def encode(password_input):
 
     password_list = []
 
@@ -16,24 +16,6 @@ def encoder(password_input):
         password_encoded += str(password_list[j])
 
     return password_encoded
-
-
-def decoder(password_encoded):
-
-    password_decoded_list = []
-
-    for i in range(0, len(password_encoded)):
-        password_decoded_list.append(int(password_encoded[i]) - 3)
-
-        if password_decoded_list[i] < 0:
-            password_decoded_list[i] = password_decoded_list[i] + 10
-
-    password_decoded = ''
-
-    for j in range(0, len(password_decoded_list)):
-        password_decoded += str(password_decoded_list[j])
-
-    return password_decoded
 
 
 def main():
@@ -60,12 +42,12 @@ def main():
 
             password_input = input("Please enter your password to encode: ")
 
-            password_encoded = encoder(password_input)
+            password_encoded = encode(password_input)
             print("Your password has been encoded and stored!")
 
         elif decision == 2:
 
-            password_decoded = decoder(password_encoded)
+            password_decoded = decode(password_encoded)
             print(f"The encoded password is {password_encoded}, and the original password is {password_decoded}")
 
         elif decision == 3:

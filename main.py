@@ -1,3 +1,5 @@
+# lab 06 by Diego Valdivia
+
 def encoder(password_input):
 
     password_list = []
